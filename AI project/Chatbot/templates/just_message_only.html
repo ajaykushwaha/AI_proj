@@ -1,0 +1,25 @@
+
+{% load static %}
+
+{% for obj in chat %} {% if obj.human_bot %}
+  
+<div class="row container lighter " style="width: inherit;">
+  <div class="col-sm-11" style="text-align:right">{{ obj.message | safe }}</div>
+  <div class="col-sm-1" style="padding:0px"><img src="{% static "images/user.png" %}" alt="Avatar" ></span></div>
+</div>
+
+{% else %}
+
+<div class="row container lighter " style="width: inherit;">
+  <div class="col-sm-1" style="padding:0px"><img src='{% static "images/chatbot.png" %}' alt="Avatar" ></span></div>
+  <div class="col-sm-11" style="text-align:left">{{ obj.message | safe }}</div>
+</div>
+
+{% endif %} {% empty %}
+<div class="row container lighter " style="width: inherit;">
+  <div class="col-sm-1" style="padding:0px"><img src='{% static "images/chatbot.png" %}' alt="Avatar" ></span></div>
+  <div class="col-sm-11" style="text-align:left">Welcome to KR food delivery. What would you like to order</div>
+</div>
+{% endfor %}
+
+

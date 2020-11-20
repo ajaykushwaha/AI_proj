@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1">
+
+<category>
+    <pattern>show menu</pattern>
+    <template>@SELECT * FROM menu ;</template>
+</category>
+
+<category>
+    <pattern>show categori</pattern>
+    <template>@SELECT * FROM category;</template>
+</category>
+
+<category>
+    <pattern>sandvich</pattern>
+    <template>@select Name,price from menu where f_c_code = 'sandvich';</template>
+</category>
+
+<category>
+    <pattern>bread</pattern>
+    <template>@select Name,price from menu where f_c_code = 'breads';</template>
+</category>
+
+<category>
+    <pattern>dal</pattern>
+    <template>@select Name,price from menu where f_c_code = 'dals';</template>
+</category>
+
+<category>
+    <pattern>dosa</pattern>
+    <template>@select Name,price from menu where f_c_code = 'dosas';</template>
+</category>
+
+
+<category>
+    <pattern>IceCream</pattern>
+    <template>@select Name,price from menu where f_c_code = 'IceCream';</template>
+</category>
+
+
+<category>
+    <pattern>Maincourse</pattern>
+    <template>@select Name,price from menu where f_c_code = 'Maincourse';</template>
+</category>
+
+
+<category>
+    <pattern>pizza</pattern>
+    <template>@select Name,price from menu where f_c_code = 'pizza';</template>
+</category>
+
+<category>
+    <pattern>rice</pattern>
+    <template>@select Name,price from menu where f_c_code = 'rice';</template>
+</category>
+
+<category>
+    <pattern>salad</pattern>
+    <template>@select Name,price from menu where f_c_code = 'salads';</template>
+</category>
+
+<category>
+    <pattern>Starter</pattern>
+    <template>@select Name,price from menu where f_c_code = 'starters';</template>
+</category>
+
+<category>
+    <pattern>subziyan</pattern>
+    <template>@select Name,price from menu where f_c_code = 'subziyan';</template>
+</category>
+
+<category>
+    <pattern>noodl</pattern>
+    <template>@select Name,price from menu where f_c_code = 'noodles';</template>
+</category>
+
+<category>
+    <pattern>give jobtitl *</pattern>
+    <template>@SELECT design FROM employee_table WHERE firstName LIKE  '%<star/>%';</template>
+</category>
+
+<category>
+    <pattern>give locat*</pattern>
+    <template>@SELECT location FROM employee_table WHERE firstName LIKE  '%<star/>%';</template>
+</category>
+
+<category>
+    <pattern>give salari *</pattern>
+    <template>@Select firstname as Name,salary as Salary from salary_table, employee_table where employee_table.emp_id = salary_table.emp_id and firstname LIKE %<star/>%';
+</template>
+</category>
+
+<category>
+    <pattern>give employe work *</pattern>
+    <template>@select firstname as Name from employee_table,project_table where employee_table.project_id = project_table.Project_id and prj_name  LIKE %<star/>%';
+</template>
+</category>
+
+<category>
+    <pattern>give manag *</pattern>
+    <template>@select firstname as Name from employee_table,project_table where employee_table.project_id = project_table.Project_id and prj_name  LIKE %<star/>%';
+</template>
+</category>
+
+<category>
+    <pattern>give work experi *</pattern>
+    <template>@SELECT Employee_Qualification.experience_year FROM Employee_Qualification INNER JOIN Employee_table ON Employee_table.emp_id=Employee_Qualification.emp_id Where Employee_table.firstname like %<star/>%;
+</template>
+</category>
+
+<category>
+    <pattern>give technolog expertis *</pattern>
+    <template>@ SELECT Employee_Qualification.emp_tech_expertise FROM Employee_Qualification INNER JOIN Employee_table ON Employee_table.emp_id=Employee_Qualification.emp_id Where Employee_table.firstname like '%<star/>%'
+</template>
+</category>
+
+<category>
+    <pattern>give work experi technolog expertis *</pattern>
+    <template>@SELECT * FROM Employee_Qualification INNER JOIN Employee_table ON Employee_table.emp_id=Employee_Qualification.emp_id Where Employee_table.firstname like '%<star/>%'
+</template>
+</category>
+
+<category>
+    <pattern>give attend chart *</pattern>
+    <template>$Select January,February,March,April,May,June,July,August,September,October,November,December from Attendance , Employee_table where Employee_table.emp_id = Attendance.emp_id and firstname 
+	LIKE  '%<star/>%';</template>
+</category>
+
+</aiml>
